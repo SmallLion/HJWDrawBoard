@@ -58,6 +58,12 @@
 }
 
 - (void)changeDrawingBoard:(UISwitch *)sw {
+    if (sw.isOn) {
+        [self showMessageWithContent:@"OpenGLES" method:nil];
+    }else {
+        [self showMessageWithContent:@"贝塞尔曲线" method:nil];
+    }
+    
     self.imageView.isOpenGL = sw.isOn;
     [self.imageView changeDrawingBoard];
 }
@@ -183,7 +189,7 @@
 }
 
 - (void)tagImageView:(HJWTagImageView *)tagImageView didClickPanGesture:(UITapGestureRecognizer *)tapGesture {
-    
+    // 点击画板按钮
 }
 
 - (void)tagImageView:(HJWTagImageView *)tagImageView didClickTextGesture:(UITapGestureRecognizer *)tapGesture {
