@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="ColorSelectorCell" id="gTV-IL-0wX" customClass="ColorSelectorCell">
+            <rect key="frame" x="0.0" y="0.0" width="60" height="60"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="60" height="60"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GAi-nz-YE2">
+                        <rect key="frame" x="0.0" y="0.0" width="60" height="60"/>
+                        <color key="tintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                        <state key="normal">
+                            <color key="titleColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                        </state>
+                        <connections>
+                            <action selector="btnClick:" destination="gTV-IL-0wX" eventType="touchUpInside" id="Ns0-GD-WEV"/>
+                        </connections>
+                    </button>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="w1q-8d-LjG">
+                        <rect key="frame" x="22" y="22" width="16" height="16"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="16" id="5xE-Bv-O73"/>
+                            <constraint firstAttribute="width" secondItem="w1q-8d-LjG" secondAttribute="height" multiplier="1:1" id="UnR-FH-BD6"/>
+                            <constraint firstAttribute="width" constant="16" id="zee-wN-UC5"/>
+                        </constraints>
+                    </view>
+                </subviews>
+            </view>
+            <constraints>
+                <constraint firstItem="w1q-8d-LjG" firstAttribute="centerX" secondItem="GAi-nz-YE2" secondAttribute="centerX" id="99F-i3-FLk"/>
+                <constraint firstItem="GAi-nz-YE2" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="R7N-gH-aUi"/>
+                <constraint firstItem="w1q-8d-LjG" firstAttribute="centerY" secondItem="GAi-nz-YE2" secondAttribute="centerY" id="YZT-94-pUV"/>
+                <constraint firstAttribute="trailing" secondItem="GAi-nz-YE2" secondAttribute="trailing" id="b2c-kf-vos"/>
+                <constraint firstAttribute="bottom" secondItem="GAi-nz-YE2" secondAttribute="bottom" id="tDT-uj-lz5"/>
+                <constraint firstItem="GAi-nz-YE2" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="yrg-3B-CdY"/>
+            </constraints>
+            <connections>
+                <outlet property="colorSelectBtn" destination="GAi-nz-YE2" id="uId-Mp-1tq"/>
+                <outlet property="colorView" destination="w1q-8d-LjG" id="hbF-6Z-aZV"/>
+            </connections>
+        </collectionViewCell>
+    </objects>
+</document>
