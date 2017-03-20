@@ -259,30 +259,33 @@
 
 - (void)tagImageView:(HJWTagImageView *)tagImageView tagViewActiveLongPressGesture:(HJWTagView *)tagView
 {
-    UIStoryboard * mainStoryboard =
-    [UIStoryboard storyboardWithName:NSStringFromClass([SCEditBlurController class]) bundle:nil];
-    
-    SCEditBlurController * editBlur =
-    [mainStoryboard instantiateViewControllerWithIdentifier:NSStringFromClass([SCEditBlurController class])];
-    editBlur.bgImage = tagImageView.image;
-    
     /** 可自定义长按手势的反馈 */
-    if (tagView.isEditEnabled) {
-        NSLog(@"编辑模式 -- 长按");
-        //        [self showMessageWithContent:@"编辑模式 -- 长按" method:nil];
-        editBlur.isEditEnabled = YES;
-        editBlur.exitText = tagView.tagInfo.title;
-        editBlur.completeBlock = ^(NSString * CompleteStr) {
-            if (CompleteStr.length) {
-                [tagView updateTitle:CompleteStr];
-            }
-        };
-    }else{
-        NSLog(@"预览模式 -- 长按");
-//        [self showMessageWithContent:@"预览模式 -- 长按" method:nil];
-        editBlur.isEditEnabled = NO;
+    // 如果为文本标签🏷
+    if (hjw_StrIsEmpty(tagView.tagInfo.object)) {
+        UIStoryboard * mainStoryboard =
+        [UIStoryboard storyboardWithName:NSStringFromClass([SCEditBlurController class]) bundle:nil];
+        
+        SCEditBlurController * editBlur =
+        [mainStoryboard instantiateViewControllerWithIdentifier:NSStringFromClass([SCEditBlurController class])];
+        editBlur.bgImage = tagImageView.image;
+        
+        if (tagView.isEditEnabled) {
+            NSLog(@"编辑模式 -- 长按");
+            //        [self showMessageWithContent:@"编辑模式 -- 长按" method:nil];
+            
+            editBlur.isEditEnabled = YES;
+            editBlur.completeBlock = ^(NSString * CompleteStr) {
+                if (CompleteStr.length) {
+                    [tagView updateTitle:CompleteStr];
+                }
+            };
+        }else{
+            NSLog(@"预览模式 -- 长按");
+            //        [self showMessageWithContent:@"预览模式 -- 长按" method:nil];
+            editBlur.isEditEnabled = NO;
+        }
+        [self presentViewController:editBlur animated:YES completion:nil];
     }
-    [self presentViewController:editBlur animated:YES completion:nil];
 }
 
 - (void)tagImageView:(HJWTagImageView *)tagImageView tagViewActivePanGesture:(HJWTagView *)tagView
