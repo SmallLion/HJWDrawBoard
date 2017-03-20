@@ -1,7 +1,13 @@
 # HJWDrawBoard
 
-- 🕸 A Single HJWDrawBoard for iOS.
-- 一款简单的画板视图
+- 🏷 A Single HJWDrawBoard for iOS.
+- 🏷 一个简单的图片标签视图
+
+
+* [x] 图片画板
+* [x] 文本标签
+* [x] 语音标签
+
 
 # Preview
 <!--此处添加多张预览图-->
