@@ -175,6 +175,7 @@
     tagView.delegate = self;
     tagView.isEditEnabled = self.isEditEnable;
     [self addSubview:tagView];
+    
     [tagView showAnimationWithRepeatCount:CGFLOAT_MAX];
 }
 
@@ -227,6 +228,15 @@
     }else {
         self.openGlDrawView.hidden = YES;
         self.drawingBoard.hidden = NO;
+    }
+}
+
+- (void)showAllTagsAnimation {
+    for (id obj in self.subviews) {
+        if ([obj isKindOfClass:[HJWTagView class]]) {
+            HJWTagView * tagView = (HJWTagView *)obj;
+            [tagView showAnimationWithRepeatCount:CGFLOAT_MAX];
+        }
     }
 }
 

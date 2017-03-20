@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Edit Blur Controller-->
+        <scene sceneID="R10-Oc-pb4">
+            <objects>
+                <viewController storyboardIdentifier="SCEditBlurController" id="9SM-TW-gr6" customClass="SCEditBlurController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="1ce-dw-kSb"/>
+                        <viewControllerLayoutGuide type="bottom" id="lnO-GS-cld"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Jun-Hs-KXb">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="stock-photo" translatesAutoresizingMaskIntoConstraints="NO" id="neZ-SP-fQb">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                            </imageView>
+                            <visualEffectView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uZ8-WX-Sr3">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="fFO-YU-vSG">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                    <subviews>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BiP-FV-zhB" userLabel="完成">
+                                            <rect key="frame" x="321" y="20" width="46" height="30"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="46" id="LJi-T9-cL7"/>
+                                                <constraint firstAttribute="height" constant="30" id="Tz4-lp-HCW"/>
+                                            </constraints>
+                                            <state key="normal" title="完成">
+                                                <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            </state>
+                                            <connections>
+                                                <action selector="doneBtnAction:" destination="9SM-TW-gr6" eventType="touchUpInside" id="yhA-x6-sY8"/>
+                                            </connections>
+                                        </button>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RrP-ef-bvZ">
+                                            <rect key="frame" x="8" y="20" width="46" height="30"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="30" id="SaZ-0F-CmD"/>
+                                                <constraint firstAttribute="width" constant="46" id="aj1-UI-N3G"/>
+                                            </constraints>
+                                            <state key="normal" title="取消">
+                                                <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            </state>
+                                            <connections>
+                                                <action selector="cancelBtnAction:" destination="9SM-TW-gr6" eventType="touchUpInside" id="k7G-Pb-1ol"/>
+                                            </connections>
+                                        </button>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="RrP-ef-bvZ" firstAttribute="top" secondItem="fFO-YU-vSG" secondAttribute="top" constant="20" id="0Cj-or-MRm"/>
+                                        <constraint firstAttribute="trailing" secondItem="BiP-FV-zhB" secondAttribute="trailing" constant="8" id="2wj-hS-mcg"/>
+                                        <constraint firstItem="RrP-ef-bvZ" firstAttribute="leading" secondItem="fFO-YU-vSG" secondAttribute="leading" constant="8" id="OnB-Pl-m9s"/>
+                                        <constraint firstItem="BiP-FV-zhB" firstAttribute="top" secondItem="fFO-YU-vSG" secondAttribute="top" constant="20" id="s9q-jc-VSQ"/>
+                                    </constraints>
+                                </view>
+                                <blurEffect style="dark"/>
+                            </visualEffectView>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="ze2-xy-ZAu">
+                                <rect key="frame" x="16" y="60" width="343" height="607"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences" returnKeyType="done"/>
+                                <connections>
+                                    <outlet property="delegate" destination="9SM-TW-gr6" id="iJJ-62-RGt"/>
+                                </connections>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="neZ-SP-fQb" firstAttribute="leading" secondItem="Jun-Hs-KXb" secondAttribute="leading" id="080-ki-hha"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="ze2-xy-ZAu" secondAttribute="trailing" id="15e-dz-Og0"/>
+                            <constraint firstItem="uZ8-WX-Sr3" firstAttribute="top" secondItem="Jun-Hs-KXb" secondAttribute="top" id="AQT-Xu-Tp5"/>
+                            <constraint firstItem="uZ8-WX-Sr3" firstAttribute="leading" secondItem="Jun-Hs-KXb" secondAttribute="leading" id="AbD-hN-Dao"/>
+                            <constraint firstAttribute="trailing" secondItem="uZ8-WX-Sr3" secondAttribute="trailing" id="CfK-hx-bD7"/>
+                            <constraint firstItem="lnO-GS-cld" firstAttribute="top" secondItem="neZ-SP-fQb" secondAttribute="bottom" id="DhF-ML-Yh0"/>
+                            <constraint firstItem="lnO-GS-cld" firstAttribute="top" secondItem="ze2-xy-ZAu" secondAttribute="bottom" id="MCh-hi-yxH"/>
+                            <constraint firstItem="ze2-xy-ZAu" firstAttribute="leading" secondItem="Jun-Hs-KXb" secondAttribute="leadingMargin" id="P7o-RC-yKH"/>
+                            <constraint firstAttribute="trailing" secondItem="neZ-SP-fQb" secondAttribute="trailing" id="e4U-WL-gI8"/>
+                            <constraint firstItem="neZ-SP-fQb" firstAttribute="top" secondItem="Jun-Hs-KXb" secondAttribute="top" id="qLK-et-DaG"/>
+                            <constraint firstItem="lnO-GS-cld" firstAttribute="top" secondItem="uZ8-WX-Sr3" secondAttribute="bottom" id="tsw-AE-fNu"/>
+                            <constraint firstItem="ze2-xy-ZAu" firstAttribute="top" secondItem="1ce-dw-kSb" secondAttribute="bottom" constant="40" id="wW2-hK-JJb"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="backImage" destination="neZ-SP-fQb" id="PYC-yz-voB"/>
+                        <outlet property="doneBtn" destination="BiP-FV-zhB" id="YoV-Pj-tAu"/>
+                        <outlet property="textView" destination="ze2-xy-ZAu" id="cgr-5T-ZuV"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="8mC-9k-UmJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="135" y="-195"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="stock-photo" width="1229" height="692"/>
+    </resources>
+</document>

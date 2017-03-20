@@ -52,4 +52,6 @@
 - (void)hiddenAllTools;
 /** 切换基础画板 */
 - (void)changeDrawingBoard;
+/** 激活所有标签动画*/
+- (void)showAllTagsAnimation;
 @end

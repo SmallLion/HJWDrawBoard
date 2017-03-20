@@ -7,6 +7,20 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		26095D341E7FD756003BA769 /* SCEditBlurController.m in Sources */ = {isa = PBXBuildFile; fileRef = 26095D321E7FD756003BA769 /* SCEditBlurController.m */; };
+		26095D351E7FD756003BA769 /* SCEditBlurController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 26095D331E7FD756003BA769 /* SCEditBlurController.storyboard */; };
+		26095D3B1E7FDCB5003BA769 /* HJWRecordView.m in Sources */ = {isa = PBXBuildFile; fileRef = 26095D381E7FDCB5003BA769 /* HJWRecordView.m */; };
+		26095D3C1E7FDCB5003BA769 /* SCAudioRecordView.m in Sources */ = {isa = PBXBuildFile; fileRef = 26095D3A1E7FDCB5003BA769 /* SCAudioRecordView.m */; };
+		26095D481E7FDD03003BA769 /* audio-btn-continue@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 26095D3E1E7FDD03003BA769 /* audio-btn-continue@2x.png */; };
+		26095D491E7FDD03003BA769 /* audio-btn-continue@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 26095D3F1E7FDD03003BA769 /* audio-btn-continue@3x.png */; };
+		26095D4A1E7FDD03003BA769 /* audio-btn-pause@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 26095D401E7FDD03003BA769 /* audio-btn-pause@2x.png */; };
+		26095D4B1E7FDD03003BA769 /* audio-btn-pause@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 26095D411E7FDD03003BA769 /* audio-btn-pause@3x.png */; };
+		26095D4C1E7FDD03003BA769 /* audio-btn-play@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 26095D421E7FDD03003BA769 /* audio-btn-play@2x.png */; };
+		26095D4D1E7FDD03003BA769 /* audio-btn-play@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 26095D431E7FDD03003BA769 /* audio-btn-play@3x.png */; };
+		26095D4E1E7FDD03003BA769 /* audio-btn-record@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 26095D441E7FDD03003BA769 /* audio-btn-record@2x.png */; };
+		26095D4F1E7FDD03003BA769 /* audio-btn-record@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 26095D451E7FDD03003BA769 /* audio-btn-record@3x.png */; };
+		26095D501E7FDD03003BA769 /* audio-btn-stop@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 26095D461E7FDD03003BA769 /* audio-btn-stop@2x.png */; };
+		26095D511E7FDD03003BA769 /* audio-btn-stop@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 26095D471E7FDD03003BA769 /* audio-btn-stop@3x.png */; };
 		261E20F11E76454A00783A4B /* ColorSelector.m in Sources */ = {isa = PBXBuildFile; fileRef = 261E20F01E76454A00783A4B /* ColorSelector.m */; };
 		261E20F51E764CDB00783A4B /* ColorSelectorCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 261E20F31E764CDB00783A4B /* ColorSelectorCell.m */; };
 		261E20F61E764CDB00783A4B /* ColorSelectorCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 261E20F41E764CDB00783A4B /* ColorSelectorCell.xib */; };
@@ -77,6 +91,23 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		26095D311E7FD756003BA769 /* SCEditBlurController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCEditBlurController.h; sourceTree = "<group>"; };
+		26095D321E7FD756003BA769 /* SCEditBlurController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCEditBlurController.m; sourceTree = "<group>"; };
+		26095D331E7FD756003BA769 /* SCEditBlurController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = SCEditBlurController.storyboard; sourceTree = "<group>"; };
+		26095D371E7FDCB5003BA769 /* HJWRecordView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HJWRecordView.h; sourceTree = "<group>"; };
+		26095D381E7FDCB5003BA769 /* HJWRecordView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HJWRecordView.m; sourceTree = "<group>"; };
+		26095D391E7FDCB5003BA769 /* SCAudioRecordView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCAudioRecordView.h; sourceTree = "<group>"; };
+		26095D3A1E7FDCB5003BA769 /* SCAudioRecordView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCAudioRecordView.m; sourceTree = "<group>"; };
+		26095D3E1E7FDD03003BA769 /* audio-btn-continue@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "audio-btn-continue@2x.png"; sourceTree = "<group>"; };
+		26095D3F1E7FDD03003BA769 /* audio-btn-continue@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "audio-btn-continue@3x.png"; sourceTree = "<group>"; };
+		26095D401E7FDD03003BA769 /* audio-btn-pause@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "audio-btn-pause@2x.png"; sourceTree = "<group>"; };
+		26095D411E7FDD03003BA769 /* audio-btn-pause@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "audio-btn-pause@3x.png"; sourceTree = "<group>"; };
+		26095D421E7FDD03003BA769 /* audio-btn-play@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "audio-btn-play@2x.png"; sourceTree = "<group>"; };
+		26095D431E7FDD03003BA769 /* audio-btn-play@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "audio-btn-play@3x.png"; sourceTree = "<group>"; };
+		26095D441E7FDD03003BA769 /* audio-btn-record@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "audio-btn-record@2x.png"; sourceTree = "<group>"; };
+		26095D451E7FDD03003BA769 /* audio-btn-record@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "audio-btn-record@3x.png"; sourceTree = "<group>"; };
+		26095D461E7FDD03003BA769 /* audio-btn-stop@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "audio-btn-stop@2x.png"; sourceTree = "<group>"; };
+		26095D471E7FDD03003BA769 /* audio-btn-stop@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "audio-btn-stop@3x.png"; sourceTree = "<group>"; };
 		261E20EF1E76454A00783A4B /* ColorSelector.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ColorSelector.h; sourceTree = "<group>"; };
 		261E20F01E76454A00783A4B /* ColorSelector.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ColorSelector.m; sourceTree = "<group>"; };
 		261E20F21E764CDB00783A4B /* ColorSelectorCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ColorSelectorCell.h; sourceTree = "<group>"; };
@@ -125,14 +156,14 @@
 		262845FC1E78DBCD00A3FE82 /* Particle@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Particle@2x.png"; sourceTree = "<group>"; };
 		26B6AC341E727BA6001E1199 /* HJWDrawBoard.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HJWDrawBoard.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		26B6AC381E727BA6001E1199 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		26B6AC3A1E727BA6001E1199 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
-		26B6AC3B1E727BA7001E1199 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		26B6AC3A1E727BA6001E1199 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = ../AppDelegate.h; sourceTree = "<group>"; };
+		26B6AC3B1E727BA7001E1199 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = AppDelegate.m; path = ../AppDelegate.m; sourceTree = "<group>"; };
 		26B6AC3D1E727BA7001E1199 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		26B6AC3E1E727BA7001E1199 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		26B6AC411E727BA7001E1199 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		26B6AC431E727BA7001E1199 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		26B6AC431E727BA7001E1199 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = ../Assets.xcassets; sourceTree = "<group>"; };
 		26B6AC461E727BA7001E1199 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		26B6AC481E727BA7001E1199 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		26B6AC481E727BA7001E1199 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = Info.plist; path = ../Info.plist; sourceTree = "<group>"; };
 		26B6AC4D1E727BA7001E1199 /* HJWDrawBoardTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HJWDrawBoardTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		26B6AC511E727BA7001E1199 /* HJWDrawBoardTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HJWDrawBoardTests.m; sourceTree = "<group>"; };
 		26B6AC531E727BA7001E1199 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -183,6 +214,45 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		26095D361E7FDCB5003BA769 /* Record */ = {
+			isa = PBXGroup;
+			children = (
+				26095D3D1E7FDD03003BA769 /* res */,
+				26095D371E7FDCB5003BA769 /* HJWRecordView.h */,
+				26095D381E7FDCB5003BA769 /* HJWRecordView.m */,
+				26095D391E7FDCB5003BA769 /* SCAudioRecordView.h */,
+				26095D3A1E7FDCB5003BA769 /* SCAudioRecordView.m */,
+			);
+			name = Record;
+			path = ../Class/Record;
+			sourceTree = "<group>";
+		};
+		26095D3D1E7FDD03003BA769 /* res */ = {
+			isa = PBXGroup;
+			children = (
+				26095D3E1E7FDD03003BA769 /* audio-btn-continue@2x.png */,
+				26095D3F1E7FDD03003BA769 /* audio-btn-continue@3x.png */,
+				26095D401E7FDD03003BA769 /* audio-btn-pause@2x.png */,
+				26095D411E7FDD03003BA769 /* audio-btn-pause@3x.png */,
+				26095D421E7FDD03003BA769 /* audio-btn-play@2x.png */,
+				26095D431E7FDD03003BA769 /* audio-btn-play@3x.png */,
+				26095D441E7FDD03003BA769 /* audio-btn-record@2x.png */,
+				26095D451E7FDD03003BA769 /* audio-btn-record@3x.png */,
+				26095D461E7FDD03003BA769 /* audio-btn-stop@2x.png */,
+				26095D471E7FDD03003BA769 /* audio-btn-stop@3x.png */,
+			);
+			path = res;
+			sourceTree = "<group>";
+		};
+		26095D521E7FDD5A003BA769 /* DrawMethods */ = {
+			isa = PBXGroup;
+			children = (
+				262845E71E78D96700A3FE82 /* OpenGLPaint */,
+				261E213D1E76B50900783A4B /* BezierPath */,
+			);
+			name = DrawMethods;
+			sourceTree = "<group>";
+		};
 		261E20EE1E76450000783A4B /* ColorSelector */ = {
 			isa = PBXGroup;
 			children = (
@@ -309,15 +379,13 @@
 		26B6AC361E727BA6001E1199 /* HJWDrawBoard */ = {
 			isa = PBXGroup;
 			children = (
-				26B6AC371E727BA6001E1199 /* Supporting Files */,
-				26B6AC3A1E727BA6001E1199 /* AppDelegate.h */,
-				26B6AC3B1E727BA7001E1199 /* AppDelegate.m */,
-				26B6AC431E727BA7001E1199 /* Assets.xcassets */,
-				26B6AC481E727BA7001E1199 /* Info.plist */,
-				26B6AC451E727BA7001E1199 /* LaunchScreen.storyboard */,
-				26B6AC401E727BA7001E1199 /* Main.storyboard */,
+				26095D311E7FD756003BA769 /* SCEditBlurController.h */,
+				26095D321E7FD756003BA769 /* SCEditBlurController.m */,
+				26095D331E7FD756003BA769 /* SCEditBlurController.storyboard */,
 				26B6AC3D1E727BA7001E1199 /* ViewController.h */,
 				26B6AC3E1E727BA7001E1199 /* ViewController.m */,
+				26B6AC371E727BA6001E1199 /* Supporting Files */,
+				26B6AC401E727BA7001E1199 /* Main.storyboard */,
 			);
 			path = HJWDrawBoard;
 			sourceTree = "<group>";
@@ -325,6 +393,11 @@
 		26B6AC371E727BA6001E1199 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				26B6AC3A1E727BA6001E1199 /* AppDelegate.h */,
+				26B6AC3B1E727BA7001E1199 /* AppDelegate.m */,
+				26B6AC431E727BA7001E1199 /* Assets.xcassets */,
+				26B6AC481E727BA7001E1199 /* Info.plist */,
+				26B6AC451E727BA7001E1199 /* LaunchScreen.storyboard */,
 				26B6AC381E727BA6001E1199 /* main.m */,
 			);
 			path = "Supporting Files";
@@ -351,9 +424,8 @@
 		26B6AC6A1E7283BF001E1199 /* Class */ = {
 			isa = PBXGroup;
 			children = (
-				262845E71E78D96700A3FE82 /* OpenGLPaint */,
+				26095D521E7FDD5A003BA769 /* DrawMethods */,
 				261E214F1E77DC9200783A4B /* Resource */,
-				261E213D1E76B50900783A4B /* BezierPath */,
 				26B6AC7A1E728706001E1199 /* Category */,
 				261E20EE1E76450000783A4B /* ColorSelector */,
 				26B6AC6D1E728417001E1199 /* Data */,
@@ -399,6 +471,7 @@
 		26B6AC811E728D7C001E1199 /* Tool */ = {
 			isa = PBXGroup;
 			children = (
+				26095D361E7FDCB5003BA769 /* Record */,
 				26B6AC821E728D86001E1199 /* CameraPhotoTool */,
 				26B6AC871E728D86001E1199 /* HJWActionSheet */,
 				261E214B1E77C3AB00783A4B /* HJWAlertViewController */,
@@ -547,22 +620,33 @@
 				261E21621E77DC9200783A4B /* baocun@2x.png in Resources */,
 				261E20FB1E7682C100783A4B /* revocationReusableView.xib in Resources */,
 				262845F11E78D96700A3FE82 /* point.fsh in Resources */,
+				26095D4E1E7FDD03003BA769 /* audio-btn-record@2x.png in Resources */,
 				261E20F61E764CDB00783A4B /* ColorSelectorCell.xib in Resources */,
 				261E21661E77DC9200783A4B /* icon_pan@2x.png in Resources */,
 				261E21681E77DC9200783A4B /* icon_pan_selected@2x.png in Resources */,
 				261E216C1E77DC9200783A4B /* icon_revocation@2x.png in Resources */,
+				26095D491E7FDD03003BA769 /* audio-btn-continue@3x.png in Resources */,
 				261E21671E77DC9200783A4B /* icon_pan@3x.png in Resources */,
 				261E21731E77DC9200783A4B /* X@3x.png in Resources */,
 				26B6AC471E727BA7001E1199 /* LaunchScreen.storyboard in Resources */,
+				26095D501E7FDD03003BA769 /* audio-btn-stop@2x.png in Resources */,
+				26095D4A1E7FDD03003BA769 /* audio-btn-pause@2x.png in Resources */,
 				26B6AC441E727BA7001E1199 /* Assets.xcassets in Resources */,
 				261E216B1E77DC9200783A4B /* icon_play@3x.png in Resources */,
 				261E216E1E77DC9200783A4B /* icon_text@2x.png in Resources */,
 				261E21711E77DC9200783A4B /* icon_voice@3x.png in Resources */,
 				26B6AC421E727BA7001E1199 /* Main.storyboard in Resources */,
 				261E21701E77DC9200783A4B /* icon_voice@2x.png in Resources */,
+				26095D4F1E7FDD03003BA769 /* audio-btn-record@3x.png in Resources */,
+				26095D511E7FDD03003BA769 /* audio-btn-stop@3x.png in Resources */,
+				26095D4B1E7FDD03003BA769 /* audio-btn-pause@3x.png in Resources */,
+				26095D4D1E7FDD03003BA769 /* audio-btn-play@3x.png in Resources */,
 				261E21691E77DC9200783A4B /* icon_pan_selected@3x.png in Resources */,
 				261E21721E77DC9200783A4B /* X@2x.png in Resources */,
 				261E21641E77DC9200783A4B /* closeBtn@2x.png in Resources */,
+				26095D481E7FDD03003BA769 /* audio-btn-continue@2x.png in Resources */,
+				26095D351E7FD756003BA769 /* SCEditBlurController.storyboard in Resources */,
+				26095D4C1E7FDD03003BA769 /* audio-btn-play@2x.png in Resources */,
 				261E21631E77DC9200783A4B /* baocun@3x.png in Resources */,
 				261E21651E77DC9200783A4B /* closeBtn@3x.png in Resources */,
 				261E216F1E77DC9200783A4B /* icon_text@3x.png in Resources */,
@@ -601,9 +685,12 @@
 				262845F71E78D97B00A3FE82 /* OpenGLDrawView.m in Sources */,
 				261E20FA1E7682C100783A4B /* revocationReusableView.m in Sources */,
 				261E21331E76A13200783A4B /* UIColor+help.m in Sources */,
+				26095D3B1E7FDCB5003BA769 /* HJWRecordView.m in Sources */,
+				26095D3C1E7FDCB5003BA769 /* SCAudioRecordView.m in Sources */,
 				26B6AC791E72856E001E1199 /* HJWTagImageView.m in Sources */,
 				26B6AC3F1E727BA7001E1199 /* ViewController.m in Sources */,
 				262845F31E78D96700A3FE82 /* fileUtil.m in Sources */,
+				26095D341E7FD756003BA769 /* SCEditBlurController.m in Sources */,
 				261E20F51E764CDB00783A4B /* ColorSelectorCell.m in Sources */,
 				26B6AC3C1E727BA7001E1199 /* AppDelegate.m in Sources */,
 				261E21101E769CA400783A4B /* NSFileManager+Helper.m in Sources */,
@@ -665,7 +752,7 @@
 				26B6AC461E727BA7001E1199 /* Base */,
 			);
 			name = LaunchScreen.storyboard;
-			path = .;
+			path = ../.;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
