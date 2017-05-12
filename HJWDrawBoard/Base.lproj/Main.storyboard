@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12118" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12086"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -30,10 +30,21 @@
                                     <action selector="chooseImage:" destination="BYZ-38-t0r" eventType="touchUpInside" id="5om-sT-fU8"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZJk-rc-ACE">
+                                <rect key="frame" x="156" y="368" width="62" height="30"/>
+                                <state key="normal" title="录音调试">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="recordDebugAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="v6N-is-oSi"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="N8c-t4-GxO" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="1Ia-AB-aAq"/>
+                            <constraint firstItem="ZJk-rc-ACE" firstAttribute="centerX" secondItem="N8c-t4-GxO" secondAttribute="centerX" id="8Qu-vf-COh"/>
+                            <constraint firstItem="ZJk-rc-ACE" firstAttribute="top" secondItem="N8c-t4-GxO" secondAttribute="bottom" constant="20" id="e2o-aF-Ekn"/>
                             <constraint firstItem="N8c-t4-GxO" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="nbs-PV-47c"/>
                         </constraints>
                     </view>

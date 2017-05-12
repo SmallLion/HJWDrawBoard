@@ -334,4 +334,12 @@ didFinishedRecordWithPath:(NSString *)path
     
     return getImage;
 }
+
+- (IBAction)recordDebugAction:(id)sender {
+    SCAudioRecordView * recordView = [[SCAudioRecordView alloc] initWithTitles:nil];
+    recordView.delegate = self;
+    [recordView trigger];
+}
+
+
 @end

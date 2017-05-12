@@ -8,8 +8,6 @@
 
 #import "SCAudioRecordView.h"
 #import "HJWRecordView.h"
-#import "UIColor+help.h"
-#import <AVFoundation/AVFoundation.h>
 
 #define kwid keyWindow.frame.size.width
 #define khei keyWindow.frame.size.height
@@ -20,7 +18,6 @@
 #define kScreenHeight (kScreenBounds.size.height)
 
 const CGFloat menuBlankWidth         = 80;
-
 
 @interface SCAudioRecordView ()<HJWRecordViewDelegate, AVAudioPlayerDelegate>
 {
@@ -37,12 +34,11 @@ const CGFloat menuBlankWidth         = 80;
 @property (nonatomic,strong) CADisplayLink *displayLink;
 @property  NSInteger animationCount; // 动画的数量
 
-@property (nonatomic, strong) UIButton * closeBtn, * submitBtn;
+@property (nonatomic, strong) UIButton * closeBtn, *submitBtn, *delButton;
 @property (nonatomic, strong) UIView * dimBackgroundView, * EditProgressView;
 
 @property (nonatomic, strong) HJWRecordView * recordView;
 @property (nonatomic, strong) AVAudioPlayer *audioPlayer;
-@property (nonatomic, copy) NSString * kRecordAudioFile;
 
 @property (nonatomic, assign) BOOL isFinished;
 @property (nonatomic, assign) NSInteger playerCount;
@@ -72,24 +68,25 @@ const CGFloat menuBlankWidth         = 80;
         blurView.frame = keyWindow.frame;
         blurView.alpha = 0.0f;
         
-        // 左下角辅助视图
+        // 左上角辅助视图
         helperSideView = [[UIView alloc] initWithFrame: CGRectMake(0, kScreenHeight + 40, 40, 40)];
+        helperSideView.backgroundColor = [UIColor redColor];
         helperSideView.hidden = YES;
         [keyWindow addSubview: helperSideView];
         
         // 中央辅助视图
         helperCenterView = [[UIView alloc] initWithFrame: CGRectMake(kScreenWidth / 2 - 20, kScreenHeight + 40, 40, 40)];
+        helperCenterView.backgroundColor = [UIColor yellowColor];
         helperCenterView.hidden = YES;
         [keyWindow addSubview: helperCenterView];
         
         // 创建下边界界外的视图
-        self.frame = CGRectMake(0, khei + 250, kwid, 250);
+        self.frame = CGRectMake(0, kScreenHeight / 2 - menuBlankWidth, kScreenWidth, kScreenHeight / 2 + menuBlankWidth);
         self.backgroundColor = [UIColor clearColor];
         [keyWindow insertSubview: self belowSubview: helperSideView];
         
         _menuColor = menuColor;
         menuButtonHeight = height;
-        
         // 视图辅助观察颜色
         [self customInterface];
     }
@@ -99,63 +96,64 @@ const CGFloat menuBlankWidth         = 80;
 - (void)customInterface {
     _closeBtn         = [UIButton new];
     _submitBtn        = [UIButton new];
+    _delButton        = [UIButton new];
     _recordView       = [[HJWRecordView alloc] initWithFrame:CGRectZero];
     [self setup];
 }
 
-- (NSString *)getCurrentTime {
-    NSDateFormatter * formatter = [NSDateFormatter new];
-    [formatter setDateFormat:@"YYYY-MM-dd HH:mm"];
-    return [formatter stringFromDate:[NSDate date]];
-}
-
-- (void)setAudioSession{
-    //设置为播放和录音状态，以便可以在录制完之后播放录音
-    [[AVAudioSession sharedInstance] setCategory:AVAudioSessionCategoryPlayback error:nil];
-    [[AVAudioSession sharedInstance] setActive:YES error:nil];
-}
-
 - (void)setup {
-    _closeBtn.backgroundColor = [[UIColor whiteColor] colorWithAlphaComponent:.85];
     _closeBtn.titleLabel.font = [UIFont systemFontOfSize:14.f];
     [_closeBtn setTitle:@"取消" forState:UIControlStateNormal];
-    [_closeBtn setTitleColor:[UIColor colorWithHexString:@"4A4A4A" alpha:1.f]
+    [_closeBtn setTitleColor:[UIColor lightTextColor]
                     forState:UIControlStateNormal];
     [_closeBtn setTitleColor:[UIColor darkGrayColor] forState:UIControlStateHighlighted];
     [_closeBtn addTarget:self action:@selector(cancelAction) forControlEvents:UIControlEventTouchUpInside];
     _closeBtn.layer.cornerRadius = 5;
     _closeBtn.layer.masksToBounds = YES;
     
-    _submitBtn.backgroundColor = [UIColor colorWithRed:55/255.0
-                                                 green:180/255.0
-                                                  blue:245/255.0 alpha:1];
     _submitBtn.titleLabel.font = [UIFont systemFontOfSize:14.f];
     [_submitBtn setTitle:@"完成" forState:UIControlStateNormal];
-    [_submitBtn setTitleColor:[UIColor whiteColor]
+    [_submitBtn setTitleColor:[UIColor blueColor]
                      forState:UIControlStateNormal];
     [_submitBtn setTitleColor:[UIColor darkGrayColor] forState:UIControlStateHighlighted];
+    [_submitBtn setTitleColor:[UIColor lightTextColor] forState:UIControlStateDisabled];
     [_submitBtn addTarget:self action:@selector(finishAction) forControlEvents:UIControlEventTouchUpInside];
     _submitBtn.enabled = NO;
     _submitBtn.layer.cornerRadius = 5;
     _submitBtn.layer.masksToBounds = YES;
+    
+    _delButton.enabled = NO;
+    _delButton.titleLabel.font = [UIFont systemFontOfSize:14.f];
+    _delButton.backgroundColor = [[UIColor redColor] colorWithAlphaComponent:.75];
+    [_delButton setTitle:@"点击删除  重新录制" forState:UIControlStateNormal];
+    [_delButton setTitleColor:[UIColor whiteColor]
+                         forState:UIControlStateNormal];
+    [_delButton setTitleColor:[UIColor lightTextColor]
+                     forState:UIControlStateHighlighted];
+
+    [_delButton addTarget:self
+                       action:@selector(rest:)
+             forControlEvents:UIControlEventTouchUpInside];
+    _delButton.layer.cornerRadius = 5;
+    _delButton.layer.masksToBounds = YES;
 }
 
 - (void)layoutSubviews {
     [super layoutSubviews];
-    
+
     _recordView.frame = CGRectMake(0.0, 0.0, kScreenWidth, 120);
+    _recordView.center = CGPointMake(self.bounds.size.width * 0.5, self.bounds.size.height * 0.5);
     _recordView.delegate = self;
     [self addSubview:_recordView];
-    
-    _closeBtn.frame  = CGRectMake(15, CGRectGetHeight(self.frame) - 36 - 25, kScreenWidth - 30, 36);
+
+    _closeBtn.frame  = CGRectMake(0, 90, 60, 36);
     [self addSubview:_closeBtn];
     
-    _submitBtn.frame = CGRectMake(15, CGRectGetHeight(self.frame) - 36 * 2 - 40, kScreenWidth - 30, 36);
+    _submitBtn.frame = CGRectMake(kScreenWidth - 60, 90, 60, 36);
     [self addSubview:_submitBtn];
-}
 
-- (NSString *)kRecordAudioFile {
-    return [NSString stringWithFormat:@"%@.wav", [self getCurrentTime]];
+    _delButton.frame = CGRectMake(kScreenWidth / 2 - 100, CGRectGetMaxY(_recordView.frame), 200, 38);
+    [self addSubview:self.delButton];
 }
 
 #pragma mark - HJWRecordViewDelegate
@@ -166,17 +164,20 @@ const CGFloat menuBlankWidth         = 80;
 
 - (void)recordArcView:(HJWRecordView *)arcView onclickButton:(UIButton *)button {
     if (self.playerCount == 0) {
-        [self.recordView startForFilePath:[self fullPathAtCache:self.kRecordAudioFile]];
+        [self.recordView startRecording];
         //图片设置为停止录制
         [button setImage:[UIImage imageNamed:@"audio-btn-stop"] forState:UIControlStateNormal];
     }
     
     if (arcView.recorder.isRecording && self.playerCount > 0) {
+        self.delButton.enabled = YES;
         [self.recordView commitRecording];
         //图片设置为播放
         [button setImage:[UIImage imageNamed:@"audio-btn-play"] forState:UIControlStateNormal];
     }
     if (self.playerCount >= 2) {
+        self.delButton.enabled = YES;
+        
         if (self.audioPlayer.isPlaying && self.playerCount % 2 != 0) {
             //正在播放
             [self.audioPlayer pause];
@@ -191,21 +192,15 @@ const CGFloat menuBlankWidth         = 80;
     self.playerCount++;
 }
 
-- (void)recordArcView:(HJWRecordView *)arcView restRecordButton:(UIButton *)button {
-    self.submitBtn.enabled = NO;
-    self.playerCount = 0;
-    [self.recordView startForFilePath:[self fullPathAtCache:self.kRecordAudioFile]];
-    [arcView.recordButton setImage:[UIImage imageNamed:@"audio-btn-stop"]
-                          forState:UIControlStateNormal];
-    self.playerCount++;
-}
-
 - (void)audioPlayerDidFinishPlaying:(AVAudioPlayer *)player successfully:(BOOL)flag {
     NSLog(@"%@", @"播放结束");
+    [[AVAudioSession sharedInstance] setCategory:AVAudioSessionCategoryPlayAndRecord
+                                           error:nil];
     [self.recordView.recordButton setImage:[UIImage imageNamed:@"audio-btn-play"]
                                   forState:UIControlStateNormal];
 }
 
+#pragma mark - Btns Action
 - (void)finishAction {
     //提交并隐藏
     if (self.audioPlayer.isPlaying) {
@@ -217,10 +212,7 @@ const CGFloat menuBlankWidth         = 80;
     }
     
     if (_delegate && [_delegate respondsToSelector:@selector(SCAudioRecordView:didFinishedRecordWithPath:length:)]) {
-        [_delegate SCAudioRecordView:self
-           didFinishedRecordWithPath:[self fullPathAtCache:self.kRecordAudioFile]
-                              length:self.audioLength];
-        
+        [_delegate SCAudioRecordView:self didFinishedRecordWithPath:self.recordView.recordPath length:self.audioLength];
         [self tapToUntrigger];
     }
 }
@@ -231,22 +223,24 @@ const CGFloat menuBlankWidth         = 80;
     self.playerCount = 0;
     NSFileManager *fm = [NSFileManager defaultManager];
     NSError *error;
-    if (YES != [fm removeItemAtPath:[self fullPathAtCache:self.kRecordAudioFile] error:&error]) {
-        NSLog(@"remove path=%@, error=%@", [self fullPathAtCache:self.kRecordAudioFile], error);
+    if (YES != [fm removeItemAtPath:self.recordView.recordPath error:&error]) {
+        NSLog(@"remove path=%@, error=%@", self.recordView.recordPath, [error description]);
     }
     [self tapToUntrigger];
 }
 
-- (NSString *)fullPathAtCache:(NSString *)fileName{
-    NSError *error;
-    NSString *path = NSTemporaryDirectory();
-    NSFileManager *fm = [NSFileManager defaultManager];
-    if (YES != [fm fileExistsAtPath:path]) {
-        if (YES != [fm createDirectoryAtPath:path withIntermediateDirectories:YES attributes:nil error:&error]) {
-            NSLog(@"create dir path=%@, error=%@", path, error);
-        }
+- (void)rest:(UIButton *)button {
+    if (self.audioPlayer.isPlaying) {
+        [self.audioPlayer pause];
     }
-    return [path stringByAppendingPathComponent:fileName];
+    
+    self.submitBtn.enabled = NO;
+    self.playerCount = 0;
+    [self.recordView startRecording];
+    
+    [self.recordView.recordButton setImage:[UIImage imageNamed:@"audio-btn-stop"]
+                                  forState:UIControlStateNormal];
+    self.playerCount++;
 }
 
 //重画
@@ -269,7 +263,7 @@ const CGFloat menuBlankWidth         = 80;
     if (!triggered) {
         [keyWindow insertSubview:blurView belowSubview:self];
         [UIView animateWithDuration: 0.618 animations:^{
-            self.frame = CGRectMake(0, kScreenHeight - 250, kScreenWidth, 250);
+            self.frame = CGRectMake(0, kScreenHeight / 2 - menuBlankWidth, kScreenWidth, kScreenHeight / 2 + menuBlankWidth);
         }];
         
         [self beforeAnimation];
@@ -331,7 +325,7 @@ const CGFloat menuBlankWidth         = 80;
 - (void) tapToUntrigger{
     
     [UIView animateWithDuration: 0.618 animations:^{
-        self.frame = CGRectMake(0, khei + 250, kwid, 250);
+        self.frame = CGRectMake(0, khei + khei / 2 + menuBlankWidth, kwid, khei / 2 + menuBlankWidth);
     }];
     
     [self beforeAnimation];
@@ -349,6 +343,7 @@ const CGFloat menuBlankWidth         = 80;
     
     [UIView animateWithDuration:0.3 animations: ^{
         blurView.alpha = 0.0f;
+        [blurView removeFromSuperview];
     }];
     
     [self beforeAnimation];
@@ -384,8 +379,7 @@ const CGFloat menuBlankWidth         = 80;
     }
 }
 
-- (void) displayLinkAction: (CADisplayLink *)dis{
-    
+- (void) displayLinkAction: (CADisplayLink *)dis {
     CALayer *sideHelperPresentationLayer   =  (CALayer *)[helperSideView.layer presentationLayer];
     CALayer *centerHelperPresentationLayer =  (CALayer *)[helperCenterView.layer presentationLayer];
     
@@ -393,7 +387,6 @@ const CGFloat menuBlankWidth         = 80;
     CGRect sideRect = [[sideHelperPresentationLayer valueForKeyPath:@"frame"] CGRectValue];
     
     diff = sideRect.origin.y - centerRect.origin.y;
-    
     
     // 重新布局方法
     // 在receiver标上一个需要被重新绘图的标记，在下一个draw周期自动重绘
@@ -406,19 +399,20 @@ const CGFloat menuBlankWidth         = 80;
  *
  *  @return 播放器
  */
-- (AVAudioPlayer *)audioPlayer{
+- (AVAudioPlayer *)audioPlayer {
     if (!_audioPlayer) {
-        if ([[[AVAudioSession sharedInstance] category] isEqualToString:AVAudioSessionCategoryPlayback])
-        {   //切换为听筒播放
-            [[AVAudioSession sharedInstance] setCategory:AVAudioSessionCategoryPlayAndRecord error:nil];
+        if ([[[AVAudioSession sharedInstance] category] isEqualToString:AVAudioSessionCategoryPlayback]) {
+            //切换为听筒播放
+            [[AVAudioSession sharedInstance] setCategory:AVAudioSessionCategoryPlayAndRecord
+                                                   error:nil];
+        }else {
+            //切换为扬声器播放
+            [[AVAudioSession sharedInstance] setCategory:AVAudioSessionCategoryPlayback
+                                                   error:nil];
         }
-        else
-        {   //切换为扬声器播放
-            [[AVAudioSession sharedInstance] setCategory:AVAudioSessionCategoryPlayback error:nil];
-        }
-        NSURL *url                 = [NSURL fileURLWithPath:[self fullPathAtCache:self.kRecordAudioFile]];
+        NSURL *url                 = [NSURL fileURLWithPath:self.recordView.recordPath];
         NSError *error             = nil;
-        _audioPlayer               = [[AVAudioPlayer alloc]initWithContentsOfURL:url error:&error];
+        _audioPlayer               = [[AVAudioPlayer alloc] initWithContentsOfURL:url error:&error];
         _audioPlayer.numberOfLoops = 0;
         _audioPlayer.volume        = 1.0;
         _audioPlayer.delegate      = self;

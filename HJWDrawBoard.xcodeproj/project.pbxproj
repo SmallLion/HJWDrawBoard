@@ -9,8 +9,6 @@
 /* Begin PBXBuildFile section */
 		26095D341E7FD756003BA769 /* SCEditBlurController.m in Sources */ = {isa = PBXBuildFile; fileRef = 26095D321E7FD756003BA769 /* SCEditBlurController.m */; };
 		26095D351E7FD756003BA769 /* SCEditBlurController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 26095D331E7FD756003BA769 /* SCEditBlurController.storyboard */; };
-		26095D3B1E7FDCB5003BA769 /* HJWRecordView.m in Sources */ = {isa = PBXBuildFile; fileRef = 26095D381E7FDCB5003BA769 /* HJWRecordView.m */; };
-		26095D3C1E7FDCB5003BA769 /* SCAudioRecordView.m in Sources */ = {isa = PBXBuildFile; fileRef = 26095D3A1E7FDCB5003BA769 /* SCAudioRecordView.m */; };
 		26095D481E7FDD03003BA769 /* audio-btn-continue@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 26095D3E1E7FDD03003BA769 /* audio-btn-continue@2x.png */; };
 		26095D491E7FDD03003BA769 /* audio-btn-continue@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 26095D3F1E7FDD03003BA769 /* audio-btn-continue@3x.png */; };
 		26095D4A1E7FDD03003BA769 /* audio-btn-pause@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 26095D401E7FDD03003BA769 /* audio-btn-pause@2x.png */; };
@@ -71,6 +69,9 @@
 		26B6AC8B1E728D86001E1199 /* UIImage+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 26B6AC861E728D86001E1199 /* UIImage+Extension.m */; };
 		26B6AC8C1E728D86001E1199 /* HJWActionSheet.m in Sources */ = {isa = PBXBuildFile; fileRef = 26B6AC891E728D86001E1199 /* HJWActionSheet.m */; };
 		26B6AC951E72A722001E1199 /* CustomToolBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 26B6AC941E72A722001E1199 /* CustomToolBar.m */; };
+		26C7E43D1E8B5C88007A6BB5 /* SCSiriWaveformView.m in Sources */ = {isa = PBXBuildFile; fileRef = 26C7E43C1E8B5C88007A6BB5 /* SCSiriWaveformView.m */; };
+		26C7E4431E8B7CDD007A6BB5 /* HJWRecordView.m in Sources */ = {isa = PBXBuildFile; fileRef = 26C7E4401E8B7CDD007A6BB5 /* HJWRecordView.m */; };
+		26C7E4441E8B7CDD007A6BB5 /* SCAudioRecordView.m in Sources */ = {isa = PBXBuildFile; fileRef = 26C7E4421E8B7CDD007A6BB5 /* SCAudioRecordView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -94,10 +95,6 @@
 		26095D311E7FD756003BA769 /* SCEditBlurController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCEditBlurController.h; sourceTree = "<group>"; };
 		26095D321E7FD756003BA769 /* SCEditBlurController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCEditBlurController.m; sourceTree = "<group>"; };
 		26095D331E7FD756003BA769 /* SCEditBlurController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = SCEditBlurController.storyboard; sourceTree = "<group>"; };
-		26095D371E7FDCB5003BA769 /* HJWRecordView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HJWRecordView.h; sourceTree = "<group>"; };
-		26095D381E7FDCB5003BA769 /* HJWRecordView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HJWRecordView.m; sourceTree = "<group>"; };
-		26095D391E7FDCB5003BA769 /* SCAudioRecordView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCAudioRecordView.h; sourceTree = "<group>"; };
-		26095D3A1E7FDCB5003BA769 /* SCAudioRecordView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCAudioRecordView.m; sourceTree = "<group>"; };
 		26095D3E1E7FDD03003BA769 /* audio-btn-continue@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "audio-btn-continue@2x.png"; sourceTree = "<group>"; };
 		26095D3F1E7FDD03003BA769 /* audio-btn-continue@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "audio-btn-continue@3x.png"; sourceTree = "<group>"; };
 		26095D401E7FDD03003BA769 /* audio-btn-pause@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "audio-btn-pause@2x.png"; sourceTree = "<group>"; };
@@ -186,6 +183,12 @@
 		26B6AC891E728D86001E1199 /* HJWActionSheet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HJWActionSheet.m; sourceTree = "<group>"; };
 		26B6AC931E72A722001E1199 /* CustomToolBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomToolBar.h; sourceTree = "<group>"; };
 		26B6AC941E72A722001E1199 /* CustomToolBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomToolBar.m; sourceTree = "<group>"; };
+		26C7E43B1E8B5C88007A6BB5 /* SCSiriWaveformView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCSiriWaveformView.h; sourceTree = "<group>"; };
+		26C7E43C1E8B5C88007A6BB5 /* SCSiriWaveformView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCSiriWaveformView.m; sourceTree = "<group>"; };
+		26C7E43F1E8B7CDD007A6BB5 /* HJWRecordView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HJWRecordView.h; sourceTree = "<group>"; };
+		26C7E4401E8B7CDD007A6BB5 /* HJWRecordView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HJWRecordView.m; sourceTree = "<group>"; };
+		26C7E4411E8B7CDD007A6BB5 /* SCAudioRecordView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCAudioRecordView.h; sourceTree = "<group>"; };
+		26C7E4421E8B7CDD007A6BB5 /* SCAudioRecordView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCAudioRecordView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -217,11 +220,8 @@
 		26095D361E7FDCB5003BA769 /* Record */ = {
 			isa = PBXGroup;
 			children = (
+				26C7E43E1E8B7CDD007A6BB5 /* Record */,
 				26095D3D1E7FDD03003BA769 /* res */,
-				26095D371E7FDCB5003BA769 /* HJWRecordView.h */,
-				26095D381E7FDCB5003BA769 /* HJWRecordView.m */,
-				26095D391E7FDCB5003BA769 /* SCAudioRecordView.h */,
-				26095D3A1E7FDCB5003BA769 /* SCAudioRecordView.m */,
 			);
 			name = Record;
 			path = ../Class/Record;
@@ -472,8 +472,9 @@
 			isa = PBXGroup;
 			children = (
 				26095D361E7FDCB5003BA769 /* Record */,
-				26B6AC821E728D86001E1199 /* CameraPhotoTool */,
 				26B6AC871E728D86001E1199 /* HJWActionSheet */,
+				26B6AC821E728D86001E1199 /* CameraPhotoTool */,
+				26C7E43A1E8B5C88007A6BB5 /* SCSiriWaveformView */,
 				261E214B1E77C3AB00783A4B /* HJWAlertViewController */,
 			);
 			path = Tool;
@@ -506,6 +507,26 @@
 				26B6AC941E72A722001E1199 /* CustomToolBar.m */,
 			);
 			path = ToolBar;
+			sourceTree = "<group>";
+		};
+		26C7E43A1E8B5C88007A6BB5 /* SCSiriWaveformView */ = {
+			isa = PBXGroup;
+			children = (
+				26C7E43B1E8B5C88007A6BB5 /* SCSiriWaveformView.h */,
+				26C7E43C1E8B5C88007A6BB5 /* SCSiriWaveformView.m */,
+			);
+			path = SCSiriWaveformView;
+			sourceTree = "<group>";
+		};
+		26C7E43E1E8B7CDD007A6BB5 /* Record */ = {
+			isa = PBXGroup;
+			children = (
+				26C7E43F1E8B7CDD007A6BB5 /* HJWRecordView.h */,
+				26C7E4401E8B7CDD007A6BB5 /* HJWRecordView.m */,
+				26C7E4411E8B7CDD007A6BB5 /* SCAudioRecordView.h */,
+				26C7E4421E8B7CDD007A6BB5 /* SCAudioRecordView.m */,
+			);
+			path = Record;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -685,8 +706,6 @@
 				262845F71E78D97B00A3FE82 /* OpenGLDrawView.m in Sources */,
 				261E20FA1E7682C100783A4B /* revocationReusableView.m in Sources */,
 				261E21331E76A13200783A4B /* UIColor+help.m in Sources */,
-				26095D3B1E7FDCB5003BA769 /* HJWRecordView.m in Sources */,
-				26095D3C1E7FDCB5003BA769 /* SCAudioRecordView.m in Sources */,
 				26B6AC791E72856E001E1199 /* HJWTagImageView.m in Sources */,
 				26B6AC3F1E727BA7001E1199 /* ViewController.m in Sources */,
 				262845F31E78D96700A3FE82 /* fileUtil.m in Sources */,
@@ -699,9 +718,12 @@
 				26B6AC951E72A722001E1199 /* CustomToolBar.m in Sources */,
 				26B6AC8B1E728D86001E1199 /* UIImage+Extension.m in Sources */,
 				26B6AC8C1E728D86001E1199 /* HJWActionSheet.m in Sources */,
+				26C7E4441E8B7CDD007A6BB5 /* SCAudioRecordView.m in Sources */,
 				26B6AC801E728944001E1199 /* UIView+HJW.m in Sources */,
 				261E20F11E76454A00783A4B /* ColorSelector.m in Sources */,
+				26C7E4431E8B7CDD007A6BB5 /* HJWRecordView.m in Sources */,
 				26B6AC8A1E728D86001E1199 /* HJWCameraAndPhotoTool.m in Sources */,
+				26C7E43D1E8B5C88007A6BB5 /* SCSiriWaveformView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -852,6 +874,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 57HG9ZXHQZ;
 				INFOPLIST_FILE = HJWDrawBoard/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.Lemon-Lion.HJWDrawBoard";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -864,6 +887,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 57HG9ZXHQZ;
 				INFOPLIST_FILE = HJWDrawBoard/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.Lemon-Lion.HJWDrawBoard";
 				PRODUCT_NAME = "$(TARGET_NAME)";

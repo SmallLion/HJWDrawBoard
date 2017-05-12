@@ -7,11 +7,14 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <AVFoundation/AVFoundation.h>
 
 @class SCAudioRecordView;
 @protocol SCAudioRecordViewDelegate <NSObject>
 
-- (void)SCAudioRecordView:(SCAudioRecordView *)recordView didFinishedRecordWithPath:(NSString *)path length:(CGFloat)length;
+- (void)SCAudioRecordView:(SCAudioRecordView *)recordView
+didFinishedRecordWithPath:(NSString *)path
+                   length:(CGFloat)length;
 
 @end
 
